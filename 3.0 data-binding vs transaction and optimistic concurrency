@@ -1,0 +1,11 @@
+
+- In the perspective of RAD, The number one reason to split all facades into query and command groups, is NOT about the difficulty in handling transactions and optimistic concurrencies, it is about to take full advantage of the easiness of data-binding!    
+
+    * Data-binding can reduce 90% of the work; however, data-binding can only be used in query context.
+
+- Splitting facades into two also helps us to cope with the fact that in command facades we must watch for transactions and optimistic concurrencies. However, it is less important, because of the following reasons: 
+    * Amazingly, in RAD, a lot of times, users can handle them intuitively and therefore the code does not need to do anything explicitly. 
+    * Even sometimes we do need to handle them explicitly, but most of the time, there is no need to change database. 
+    * In about 5% situations, we have to handle them to such a degree that we need to use "async" (a.k.a. "evential consistent") model, and therefore, we need to add some queue tables. When that happens, because it is requriement driven, typically it is intutive, and no need for a "framework". We only need conceptual understanding and a few convenient subroutine-function calls.
+    
+    
