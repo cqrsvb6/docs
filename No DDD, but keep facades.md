@@ -1,0 +1,14 @@
+
+- "DD" as "DTO": In vb6 implementation, DTOs are not classes, not even custom types. Instead, we use dictionaries ("D"), or, dictionaries of dictionaries ("DD").       
+
+    * All keys and values in the dictionary are strings.     
+    * We use JSON; but again, all values in JSON are always strings.        
+    * DDs are similar to "record-sets".
+    
+- "DDD": Because we do not classes, so, no DDD anymore. However, some key ideas in DDD are still there; they are just "crystalized" as relational concepts, or, dictionary concepts.
+    
+- "Facades": Because a vb6 appliaction is typically deployed as 2-tier, so, the concept of "web service" is relaxed into "facades", and somtimes in those facades, we can prompt a msgbox. The reasoning is: it is RAD; we can always fix those msgboxes when we really need to deploy the facade as a web service.
+
+    * Based all above, CQRS now means that all facades should be split into two groups: query facades and command facades.     
+    * In other words, the split or "seapration" in CQRS is only in facades, not in database.    
+ 
